@@ -160,6 +160,8 @@ def describe_reg_name(regnum, machine_arch=None, default=True):
         return _REG_NAMES_x64[regnum]
     elif machine_arch == 'AArch64':
         return _REG_NAMES_AArch64[regnum]
+    elif machine_arch == 'RISC-V':
+        return _REG_NAMES_RISCV[regnum]
     elif default:
         return 'r%s' % regnum
     else:
@@ -578,6 +580,18 @@ _REG_NAMES_AArch64 = [
     'z16', 'z17', 'z18', 'z19', 'z20', 'z21', 'z22', 'z23',
     'z24', 'z25', 'z26', 'z27', 'z28', 'z29', 'z30', 'z31'
 ]
+
+_REG_NAMES_RISCV = [
+    'zero', 'ra', 'sp', 'gp', 'tp', 't0', 't1', 't2',
+    's0', 's1', 'a0', 'a1', 'a2', 'a3', 'a4', 'a5',
+    'a6', 'a7', 's2', 's3', 's4', 's5', 's6', 's7',
+    's8', 's9', 's10', 's11', 't3', 't4', 't5', 't6',
+    'ft0', 'ft1', 'ft2', 'ft3', 'ft4', 'ft5', 'ft6', 'ft7',
+    'fs0', 'fs1', 'fa0', 'fa1', 'fa2', 'fa3', 'fa4', 'fa5',
+    'fa6', 'fa7', 'fs2', 'fs3', 'fs4', 'fs5', 'fs6', 'fs7',
+    'fs8', 'fs9', 'fs10', 'fs11', 'ft8', 'ft9', 'ft10', 'ft11'
+]
+
 
 
 class ExprDumper(object):
